@@ -18,12 +18,12 @@ run() {
 	sudo $KVPERF -c $CFG -T 28 -u -v 4000 -n 5000000 -d $dev > ${LOGDIR}/result_4k.out
 
 	# Rand gets
-	sudo $KVPERF -c $CFG -p -r -v 4000 -n 5000000 -T 16 -d $dev >> ${LOGDIR}/result_4k.out
-	sudo $KVPERF -c $CFG -p -r -v 4000 -n 5000000 -T 32 -d $dev >> ${LOGDIR}/result_4k.out
-	sudo $KVPERF -c $CFG -p -r -v 4000 -n 5000000 -T 64 -d $dev >> ${LOGDIR}/result_4k.out
-	sudo $KVPERF -c $CFG -p -r -v 4000 -n 5000000 -T 128 -d $dev >> ${LOGDIR}/result_4k.out
-	sudo $KVPERF -c $CFG -p -r -v 4000 -n 5000000 -T 256 -d $dev >> ${LOGDIR}/result_4k.out
-	sudo $KVPERF -c $CFG -p -r -v 4000 -n 5000000 -T 512 -d $dev >> ${LOGDIR}/result_4k.out
+	sudo $KVPERF -c $CFG -p -r -v 4000 -n 5000000 -T 16 -l ${LOGDIR}/lat_16.out -d $dev >> ${LOGDIR}/result_4k.out
+	sudo $KVPERF -c $CFG -p -r -v 4000 -n 5000000 -T 32 -l ${LOGDIR}/lat_32.out -d $dev >> ${LOGDIR}/result_4k.out
+	sudo $KVPERF -c $CFG -p -r -v 4000 -n 5000000 -T 64 -l ${LOGDIR}/lat_64.out -d $dev >> ${LOGDIR}/result_4k.out
+	sudo $KVPERF -c $CFG -p -r -v 4000 -n 5000000 -T 128 -l ${LOGDIR}/lat_128.out -d $dev >> ${LOGDIR}/result_4k.out
+	sudo $KVPERF -c $CFG -p -r -v 4000 -n 5000000 -T 256 -l ${LOGDIR}/lat_256.out -d $dev >> ${LOGDIR}/result_4k.out
+	sudo $KVPERF -c $CFG -p -r -v 4000 -n 5000000 -T 512 -l ${LOGDIR}/lat_512.out -d $dev >> ${LOGDIR}/result_4k.out
 
 	./log.sh stop $LOGDIR
 }

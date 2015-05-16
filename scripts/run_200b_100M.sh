@@ -15,7 +15,7 @@ LOGDIR=logs_200b_100M
 
 run_perf() {
 	./log.sh start $LOGDIR
-	$KVPERF -c $CFG -t $THREADS -v $VALSIZE -n $OPS -d $DEVICE > ${LOGDIR}/result_run_${1}.out
+	$KVPERF -c $CFG -l ${LOGDIR}/latency_run_${1}.out -t $THREADS -v $VALSIZE -n $OPS -d $DEVICE > ${LOGDIR}/result_run_${1}.out
 	if [ $? -ne 0 ]; then
 		./log.sh stop $LOGDIR
 		echo "Error: run $1 failed\n"

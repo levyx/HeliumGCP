@@ -92,8 +92,8 @@ For this run, three GCP instances are required with 1, 2, and 4 SSDs. On
 each instance, run one of the following command depending on the number of SSDs:
 
 ```
-gcloud compute ssh username@gcp-demo --command "(cd HeliumGCP/scripts; sudo ./run_4k.sh 1)"
-gcloud compute ssh username@gcp-demo --command "(cd HeliumGCP/scripts; sudo ./run_4k.sh 2)"
-gcloud compute ssh username@gcp-demo --command "(cd HeliumGCP/scripts; sudo ./run_4k.sh 4)"
+gcloud compute ssh username@gcp-demo --command "(cd HeliumGCP/scripts; ./run_4k.sh 1)"
+gcloud compute ssh username@gcp-demo --command "(cd HeliumGCP/scripts; ./run_4k.sh 2)"
+gcloud compute ssh username@gcp-demo --command "(cd HeliumGCP/scripts; ./run_4k.sh 4)"
 ```
 
