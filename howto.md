@@ -8,6 +8,9 @@ gcloud config set compute/zone us-central1-c
 
 ####1. Create a Debian based instance that has 4 local SSDs. 
 There are two ways to create this instance -- (i) Create from an existing snapshot -or- (ii) Create from scratch.
+Creating from snapshot assumes that you have access to a snapshot of the root disk image
+from Levyx. If you do not have this, we start from a clean Debian OS install and then
+add the necessary packages.
 
 * 1a. Create from snapshot:
 ```
@@ -22,7 +25,9 @@ gcloud compute --project "your-project-name" instances create "gcp-demo" --zone 
 ```
 
 ####2. Add ssh keys to the VM instance
-From the developer's console -> SSH Keys -> Copy paste the `~/.ssh/public_key_for_gcp.pub`
+You may need to add the public key for GCE to the newly created VM. This can be done
+from the GCP Web console.
+From the developer's console -> SSH Keys -> Copy paste the `~/.ssh/<public_key_for_gcp>.pub`
 
 
 ####3. If created using 1a., skip this step
@@ -92,6 +97,7 @@ For this run, three GCP instances are required with 1, 2, and 4 SSDs. On
 each instance, run one of the following command depending on the number of SSDs:
 
 ```
+<<<<<<< HEAD
 gcloud compute ssh username@gcp-demo --command "(cd HeliumGCP/scripts; ./run_4k.sh 1)"
 gcloud compute ssh username@gcp-demo --command "(cd HeliumGCP/scripts; ./run_4k.sh 2)"
 gcloud compute ssh username@gcp-demo --command "(cd HeliumGCP/scripts; ./run_4k.sh 4)"
