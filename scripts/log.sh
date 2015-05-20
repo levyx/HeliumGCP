@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# Copyright (C) 2013-2015, Levyx, Inc.
+#
 
 INTERVAL=1
 LOGDIR=logs

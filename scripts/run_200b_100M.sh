@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# Copyright (C) 2013-2015, Levyx, Inc.
+#
 
 DEVICE=he://.//dev/nvme0n1,/dev/nvme0n2,/dev/nvme0n3,/dev/nvme0n4
 OPS=100000000

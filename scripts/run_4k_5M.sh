@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# Copyright (C) 2013-2015, Levyx, Inc.
+#
 
 LOGDIR=logs_4k_5M
 KVPERF=../kvperf/kvperf
